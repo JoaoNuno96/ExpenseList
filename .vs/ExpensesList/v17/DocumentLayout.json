@@ -1,0 +1,55 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Jo\u00E3o Nuno\\source\\repos\\ExpensesList\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0CEACE5D-EC62-4DED-9A34-CD98675AE488}|ExpensesList\\ExpensesList.csproj|c:\\users\\jo\u00E3o nuno\\source\\repos\\expenseslist\\expenseslist\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CEACE5D-EC62-4DED-9A34-CD98675AE488}|ExpensesList\\ExpensesList.csproj|solutionrelative:expenseslist\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CEACE5D-EC62-4DED-9A34-CD98675AE488}|ExpensesList\\ExpensesList.csproj|c:\\users\\jo\u00E3o nuno\\source\\repos\\expenseslist\\expenseslist\\entities\\expense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CEACE5D-EC62-4DED-9A34-CD98675AE488}|ExpensesList\\ExpensesList.csproj|solutionrelative:expenseslist\\entities\\expense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Jo\u00E3o Nuno\\source\\repos\\ExpensesList\\ExpensesList\\Program.cs",
+              "RelativeDocumentMoniker": "ExpensesList\\Program.cs",
+              "ToolTip": "C:\\Users\\Jo\u00E3o Nuno\\source\\repos\\ExpensesList\\ExpensesList\\Program.cs",
+              "RelativeToolTip": "ExpensesList\\Program.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAxwBMAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-20T09:13:09.235Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Expense.cs",
+              "DocumentMoniker": "C:\\Users\\Jo\u00E3o Nuno\\source\\repos\\ExpensesList\\ExpensesList\\Entities\\Expense.cs",
+              "RelativeDocumentMoniker": "ExpensesList\\Entities\\Expense.cs",
+              "ToolTip": "C:\\Users\\Jo\u00E3o Nuno\\source\\repos\\ExpensesList\\ExpensesList\\Entities\\Expense.cs",
+              "RelativeToolTip": "ExpensesList\\Entities\\Expense.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-17T19:14:46.912Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
