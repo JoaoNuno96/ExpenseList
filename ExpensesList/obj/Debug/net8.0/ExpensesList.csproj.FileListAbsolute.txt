@@ -1,0 +1,15 @@
+C:\Users\João Nuno\source\repos\ExpensesList\ExpensesList\bin\Debug\net8.0\ExpensesList.exe
+C:\Users\João Nuno\source\repos\ExpensesList\ExpensesList\bin\Debug\net8.0\ExpensesList.deps.json
+C:\Users\João Nuno\source\repos\ExpensesList\ExpensesList\bin\Debug\net8.0\ExpensesList.runtimeconfig.json
+C:\Users\João Nuno\source\repos\ExpensesList\ExpensesList\bin\Debug\net8.0\ExpensesList.dll
+C:\Users\João Nuno\source\repos\ExpensesList\ExpensesList\bin\Debug\net8.0\ExpensesList.pdb
+C:\Users\João Nuno\source\repos\ExpensesList\ExpensesList\obj\Debug\net8.0\ExpensesList.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\João Nuno\source\repos\ExpensesList\ExpensesList\obj\Debug\net8.0\ExpensesList.AssemblyInfoInputs.cache
+C:\Users\João Nuno\source\repos\ExpensesList\ExpensesList\obj\Debug\net8.0\ExpensesList.AssemblyInfo.cs
+C:\Users\João Nuno\source\repos\ExpensesList\ExpensesList\obj\Debug\net8.0\ExpensesList.csproj.CoreCompileInputs.cache
+C:\Users\João Nuno\source\repos\ExpensesList\ExpensesList\obj\Debug\net8.0\ExpensesList.sourcelink.json
+C:\Users\João Nuno\source\repos\ExpensesList\ExpensesList\obj\Debug\net8.0\ExpensesList.dll
+C:\Users\João Nuno\source\repos\ExpensesList\ExpensesList\obj\Debug\net8.0\refint\ExpensesList.dll
+C:\Users\João Nuno\source\repos\ExpensesList\ExpensesList\obj\Debug\net8.0\ExpensesList.pdb
+C:\Users\João Nuno\source\repos\ExpensesList\ExpensesList\obj\Debug\net8.0\ExpensesList.genruntimeconfig.cache
+C:\Users\João Nuno\source\repos\ExpensesList\ExpensesList\obj\Debug\net8.0\ref\ExpensesList.dll

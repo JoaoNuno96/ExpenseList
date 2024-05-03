@@ -1,8 +1,8 @@
 ﻿using System;
+using System.Globalization;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ExpensesList.Exceptions;
+
 
 namespace ExpensesList.Entities
 {
@@ -14,11 +14,10 @@ namespace ExpensesList.Entities
 
         public Expense() { }
 
-        public Expense(string n, double price)
+        public Expense(double price, DateTime dt)
         {
-            Nome = n;
             Price = price;
-            Date = DateTime.Now;
+            Date = dt;
         }
 
         public string Nome
@@ -31,7 +30,7 @@ namespace ExpensesList.Entities
                 }
                 else
                 {
-                    Name = "";
+                    throw new ExpenseException("Expense's name must have 3 to 20 characters");
                 }
             }
         }

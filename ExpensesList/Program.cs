@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Globalization;
-using System.Linq;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using ExpensesList.Entities;
+using System.Collections;
+using ExpensesList.Exceptions;
 
 namespace ExpensesList
 {
@@ -17,79 +17,125 @@ namespace ExpensesList
             Console.WriteLine("____________________________________________________________________________");
 
             bool execute = true;
-            List<Expense> ExList = new List<Expense>();
+            ListExpenses listExp = new ListExpenses();
 
             while (execute)
             {
                 Console.WriteLine("What do you want to do?");
-                Console.WriteLine("Do you want to add an expense?(e) ");
-                Console.WriteLine("Do you want to show current list ?(l) ");
+                Console.WriteLine("Add an expense?(e) ");
+                Console.WriteLine("Show current list ?(l) ");
+                Console.WriteLine("Filter the list by dates ?(f) ");
                 Console.WriteLine("Turn Off Application? (s) ");
 
                 char Choice = char.Parse(Console.ReadLine());
 
-
-                if (Choice == 's' || Choice == 'S')
+                try
                 {
-                    execute = false;
-
-                }
-
-                if (Choice == 'e' || Choice == 'E')
-                {
-                    Console.WriteLine("");
-                    Console.Write("How many expenses will you add? ");
-                    int Nr = int.Parse(Console.ReadLine());
-
-                    for (int i = 1; i <= Nr; i++)
+                    if (Choice == 's' || Choice == 'S')
                     {
-                        Console.WriteLine("____________________________________________________________________________");
-                        Console.WriteLine("Expense #" + i);
-                        Console.Write("Name: ");
-                        string Name = Console.ReadLine();
-                        Console.Write("Price: ");
-                        double Price = double.Parse(Console.ReadLine(),CultureInfo.InvariantCulture);
-
-                        ExList.Add(new Expense(Name,Price));
-                        Console.WriteLine("Expense add with success!");
-                        Console.WriteLine("____________________________________________________________________________");
+                        execute = false;
 
                     }
-                }
 
-                if(Choice == 'l' || Choice == 'L')
-                {
-                    Console.WriteLine("");
-                    double Gastos = 0;
+                    if (Choice == 'e' || Choice == 'E')
+                    {
+                        Console.WriteLine("");
+                        Console.Write("How many expenses will you add? ");
+                        int Nr = int.Parse(Console.ReadLine());
 
-                    if(!ExList.Any())
-                    {
-                        Console.WriteLine("____________________________________________________________________________");
-                        Console.WriteLine("No expense registered.");
-                        Console.WriteLine("____________________________________________________________________________");
-                    }
-                    else
-                    {
-                        Console.WriteLine("____________________________________________________________________________");
-                        Console.WriteLine("LIST OF EXPENSES:");
-                        foreach (Expense ex in ExList)
+                        for (int i = 1; i <= Nr; i++)
                         {
-                            
-                            Console.Write(" ----> ");
-                            Console.WriteLine(ex.ToString());
-                            Gastos += ex.Price;
+                            Console.WriteLine("____________________________________________________________________________");
+                            Console.WriteLine("Expense #" + i);
+                            Console.Write("Name: ");
+                            string Name = Console.ReadLine();
+                            Console.Write("Price: ");
+                            double Price = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                            Console.Write("Date: ");
+                            DateTime Date = DateTime.ParseExact(Console.ReadLine(), "dd-MM-yyyy", CultureInfo.InvariantCulture);
+
+                            var ex = new Expense(Price, Date);
+                            ex.Nome = Name;
+                            listExp.AddExp(ex);
+                            //listExp.ProcessListExpenseFile();
+
+                            Console.WriteLine("Expense add with success!");
+                            Console.WriteLine("____________________________________________________________________________");
 
                         }
-
-                        Console.WriteLine("");
-                        Console.WriteLine($"Total Spend: {ExList.Select(x => x.Price).Sum()}$");
-                        Console.WriteLine("____________________________________________________________________________");
                     }
-                    Console.WriteLine("");
+
+                    if (Choice == 'l' || Choice == 'L')
+                    {
+                        Console.WriteLine();
+
+                        if (listExp == null)
+                        {
+                            Console.WriteLine("____________________________________________________________________________");
+                            Console.WriteLine("No expense registered.");
+                            Console.WriteLine("____________________________________________________________________________");
+                        }
+                        else
+                        {
+                            Console.WriteLine("____________________________________________________________________________");
+                            Console.WriteLine("LIST OF EXPENSES:");
+                            foreach (Expense ex in listExp.ListExp)
+                            {
+                                Console.WriteLine(ex);
+                            }
+
+                            Console.WriteLine("");
+                            Console.WriteLine($"Average Price (per Expense): {listExp.AverageExPrice()}$");
+                            Console.WriteLine($"Total Spend: {listExp.SumExPrice()}$");
+                            Console.WriteLine("____________________________________________________________________________");
+                        }
+                        Console.WriteLine("");
+
+                    }
+
+                    if(Choice == 'f' || Choice == 'F')
+                    {
+                        Console.WriteLine();
+                        if (listExp == null)
+                        {
+                            Console.WriteLine("____________________________________________________________________________");
+                            Console.WriteLine("No expense registered.");
+                            Console.WriteLine("____________________________________________________________________________");
+                        }
+                        else
+                        {
+                            Console.WriteLine("____________________________________________________________________________");
+                            Console.WriteLine("Inicial Date (dd-MM-yyyy):");
+                            DateTime dateInitial = DateTime.ParseExact(Console.ReadLine(), "dd-MM-yyyy", CultureInfo.InvariantCulture);
+                            Console.WriteLine("Final Date (dd-MM-yyyy):");
+                            DateTime dateFinal = DateTime.ParseExact(Console.ReadLine(), "dd-MM-yyyy", CultureInfo.InvariantCulture);
+
+
+                        }
+                    }
 
                 }
+                catch(ExpenseException ex)
+                {
+                    Console.WriteLine(ex.Message + ", " + ex.Source);
+                }
+                catch (AddExpenseException ax)
+                {
+                    Console.WriteLine(ax.Message + ", " + ax.Source);
+                }
+                catch (RemoveExpenseException rx)
+                {
+                    Console.WriteLine(rx.Message + ", " + rx.Source);
+                }
+                catch (FilterException fx)
+                {
+                    Console.WriteLine(fx.Message + ", " + fx.Source);
+                }
+
+
 
             }
+            
             Console.WriteLine("____________________________________________________________________________");
             Console.WriteLine("Application Shut Down!");
             Console.WriteLine("____________________________________________________________________________");
